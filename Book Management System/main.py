@@ -59,6 +59,15 @@ def send_books():
     Nentry.delete(0,tk.END)
     AuEntry.delete(0,tk.END)
 
+def display_books():
+    cursor.execute("SELECT*FROM books")
+    rows = cursor.fetchall()
+    display_search_results(rows)
+
+def display_search_results(rows):
+    listbox.delete(0, tk.END)
+    for row in rows:
+        listbox.insert(tk.END, f"ISBN: {row[0]}, Name: {row[1]}, Author: {row[2]}")
 
 #creating buttons and labels for MENU SCENE
 title = tk.Label(menu,text="BOOK MANAGEMENT SYSTEM",font=("Bebas Neue",18),justify="center")
@@ -92,9 +101,8 @@ sbutton.grid(row=2,column=1, columnspan=8,padx=10,pady=10)
 gback = tk.Button(add_books,text="GO BACK",command=show_home)
 gback.grid(row=2,column=0,padx=10,pady=10)
 
-succLabel = tk.Label(add_books,text="Books Added sucessfully")
-succLabel.grid(row=3,column=0,padx=10,pady=10)
-
+listbox = tk.Listbox(add_books,width=60,justify="center")
+listbox.grid(row=3,column=1)
 
 #Creating Buttons and labels for SEARCH BOOKS scene
 sbook = tk.Entry(search_books)
