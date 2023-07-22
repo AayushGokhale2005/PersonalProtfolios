@@ -171,7 +171,7 @@ clear.grid(row=3,column=0,padx=10,pady=10)
 perma_delete = tk.Button(addincome,text="DELETE ALL DATA",command=delete)
 perma_delete.grid(row=3,column=1,padx=10,pady=10)
 
-money_spent = tk.Label(addincome,text='Money spent : 0 ',font=("Babas Neue",24))
+money_spent = tk.Label(addincome,text='Money spent : 0 ',font=("Babas Neue",18))
 money_spent.grid(row=4,column=0,padx=10,pady=10)
 #App loop 
 show_login()
