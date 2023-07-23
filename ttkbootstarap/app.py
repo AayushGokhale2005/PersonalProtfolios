@@ -1,14 +1,10 @@
-import tkinter as tk
-from tkinter import ttk
-from ttkbootstrap import Style
+from tkinter import *
+from ttkbootstrap.constants import*
+import ttkbootstrap as tb
 
-# Create an instance of Style
-style = Style(theme='superhero')  # Replace 'superhero' with the desired theme name
+root = tb.Window(themename="superhero")
+root.title("Test")
+root.geometry("500x500")
 
-# Create the main application window
-root = style.master
-root.title("My Themed Application")
-# Add your widgets and application logic here
 
-# Start the main event loop
 root.mainloop()
